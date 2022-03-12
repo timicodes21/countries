@@ -4,11 +4,13 @@ const container = document.querySelector('.country-row')
 const search = document.querySelector('.search-input')
 const region = document.querySelector('.region')
 
+// function declaration to render all countrues on home page
 const renderCountries = async () => {
     let uri = 'https://restcountries.com/v3.1/all'
 
     const res = await fetch(uri)
-    console.log(res)
+    
+    // Error handler
     if(!res.ok){
         let template = ''
         template += `
@@ -18,7 +20,7 @@ const renderCountries = async () => {
     }
     const countries = await res.json()
     
-
+    // function to map all countries
     let template = ``
 
     countries.forEach(country => {
@@ -43,6 +45,7 @@ const renderCountries = async () => {
     
     container.innerHTML = template;
 
+    // function declaration for search bar
     const searchCountry = (term) => {
         console.log(term)
         const filteredCountry = countries.filter(country => country.name.common.toLowerCase().includes(term))
@@ -72,11 +75,14 @@ const renderCountries = async () => {
 
     }
     
+    // event listener for search bar
     search.addEventListener('keyup', () => {
         const term = search.value.toLowerCase().trim()
+        // function expression for search bar
         searchCountry(term)
     })
 
+    // function declaration to filter by regions
     const searchRegion = async (term) => {
     let uri = `https://restcountries.com/v3.1/region/${term}`
     if(term === ''){
@@ -110,8 +116,10 @@ const renderCountries = async () => {
 
     }
 
+    // event listener to filter by regions
     region.addEventListener('change', () => {
         const term = region.value.toLowerCase().trim()
+        // function expression to filter by regions
         searchRegion(term)
     })
 

@@ -9,11 +9,11 @@ const renderCountry = async () => {
     console.log(country)
     console.log(country[0].borders[2])
 
-    const borderCountries = country[0].borders.forEach(async (border, index) => {
-        const borderCount = await fetch(`https://restcountries.com/v3.1/alpha/${border}`)
-        const data = await borderCount.json()
-        console.log(data)
-    })
+    // const borderCountries = country[0].borders.forEach(async (border, index) => {
+    //     const borderCount = await fetch(`https://restcountries.com/v3.1/alpha/${border}`)
+    //     const data = await borderCount.json()
+    //     console.log(data)
+    // })
 
     let template = ``
     
