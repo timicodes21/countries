@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>countries</title>
+</head>
+<body class="bg-gray">
+    <!-- header -->
+    <section class="header bg-white shadow-sm">
+        <div class="container py-2 d-flex justify-content-between">
+            <div>
+                <h4 class="font-800">Where in the world?</h4>
+            </div>
+            <div>
+                <p>Darkmode</p>
+            </div>
+        </div>
+    </section>
+    <!-- search and filter -->
+    <section class="search">
+        <div class="container py-5 d-flex justify-content-between">
+            <div>
+                <div class="bg-white border-0 rounded px-3 shadow-sm">
+                    <i class="fa fa-search icon d-inline"></i>
+                    <input type="text" class="p-2 search-input" placeholder="search for a country...">
+                </div>
+            </div>
+            <div>
+                <div class="bg-white border-0">
+                    <select name="regions" class="p-2 rounded focus-input w-100 shadow-sm region" aria-placeholder="Filter by Region" id="regions">
+                        <option value="" disabled selected hidden class="font-14 text-darkblue">Filter by Region</option>
+                        <option value="" class="font-14 text-darkblue">All</option>
+                        <option value="africa" class="font-14 text-darkblue">Africa</option>
+                        <option value="america" class="font-14 text-darkblue">America</option>
+                        <option value="asia" class="font-14 text-darkblue">Asia</option>
+                        <option value="europe" class="font-14 text-darkblue">Europe</option>
+                        <option value="oceania" class="font-14 text-darkblue">Oceania</option>
+                      </select>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- all countries -->
+    <section class="countries">
+        <div class="container">
+            <div class="row country-row">
+                <!-- dynamically input countries check index.js -->
+            </div>
+        </div>
+    </section>
+
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>

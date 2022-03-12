@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.bg-darkblue{
+    background-color: hsl(209, 23%, 22%);
+}
+
+.bg-gray{
+    background-color: hsl(0, 0%, 98%);
+}
+  
+.font-300{
+    font-weight: 300;
+}
+
+.font-600{
+    font-weight: 600;
+}
+
+.font-800{
+    font-weight: 800;
+}
+
+.font-12{
+    font-size: 12px;
+}
+  
+.font-14{
+    font-size: 14px;
+}
+
+.font-16{
+    font-size: 16px;
+}
+
+.text-darkblue{
+    color: hsl(200, 15%, 8%);
+}
+
+.search-input{
+    outline: none;
+    border: 2px solid #fff;
+}
+
+.search-input::placeholder{
+    font-size: 12px;
+}
+
+.focus-input{
+    outline: none;
+    border: 2px solid #fff;
+}
+
+.focus-input::placeholder{
+    font-size: 14px;
+}
+
+.icon{
+    color: hsl(200, 15%, 8%);;
+}
+
+.card{
+    border: 2px solid #fff;
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
