@@ -28,7 +28,7 @@ const renderCountry = async () => {
         const borderCount = await fetch(`https://restcountries.com/v3.1/alpha/${border}`)
         const data = await borderCount.json()
         template2 += `
-            <a href="/details.html?name=${data[0].name.common}" class="col-4 col-md-2 py-2 m-3 px-4 shadow-sm rounded text-darkblue">${data[0].name.common}</a>
+            <a href="./details.html?name=${data[0].name.common}" class="col-4 col-md-2 py-2 m-3 px-4 shadow-sm rounded text-darkblue">${data[0].name.common}</a>
         `
         console.log(data)
         console.log(template2);

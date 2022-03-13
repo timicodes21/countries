@@ -28,7 +28,7 @@ const renderCountries = async () => {
         const population = (dollarUSLocale.format(country.population))
         template += `
             <div class="col-12 col-md-4 col-lg-3 mb-3 rounded">
-                <a href="/details.html?name=${country.name.common}">
+                <a href="html/details.html?name=${country.name.common}">
                     <div class="card shadow-sm">
                         <img src=${country.flags.png} style="height: 25vh;" alt="" class="rounded-top img-fluid">
                         <div class="p-3 font-14 text-darkblue">
@@ -57,7 +57,7 @@ const renderCountries = async () => {
             const population = (dollarUSLocale.format(country.population))
             template2 += `
             <div class="col-12 col-md-4 col-lg-3 mb-3 rounded">
-                <a href="/details.html?name=${country.name.common}">
+                <a href="html/details.html?name=${country.name.common}">
                     <div class="card shadow-sm">
                         <img src=${country.flags.png} style="height: 25vh;" alt="" class="rounded-top img-fluid">
                         <div class="p-3 font-14 text-darkblue">
@@ -98,7 +98,7 @@ const renderCountries = async () => {
         const population = (dollarUSLocale.format(country.population))
         template3 += `
             <div class="col-12 col-md-4 col-lg-3 mb-3 rounded">
-                <a href="/details.html?name=${country.name.common}">
+                <a href="html/details.html?name=${country.name.common}">
                     <div class="card shadow-sm">
                         <img src=${country.flags.png} style="height: 25vh;" alt="" class="rounded-top img-fluid">
                         <div class="p-3 font-14 text-darkblue">
