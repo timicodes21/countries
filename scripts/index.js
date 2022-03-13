@@ -125,9 +125,7 @@ const renderCountries = async () => {
 
 }
 
-
-
-
+// function expression to render all countrues on home page
 renderCountries()
 
 
