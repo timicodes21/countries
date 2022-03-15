@@ -3,6 +3,34 @@
 const container = document.querySelector('.country-row')
 const search = document.querySelector('.search-input')
 const region = document.querySelector('.region')
+const themeBtn = document.querySelector('.theme')
+
+const getCurrentTheme = () => {
+    let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    localStorage.getItem('countries.theme') ? theme = localStorage.getItem('countries.theme') : null
+    return theme;
+}
+
+const loadTheme = (theme) => {
+    const root = document.querySelector(':root');
+    if(theme === "light"){
+        themeBtn.innerHTML = '<p class="text-darkblue font-16 pointer"><i class="fa-solid d-inline fa-moon icon-dark"></i> Dark Mode</p>'
+    } else{
+        themeBtn.innerHTML = '<p class="text-darkblue font-16 pointer"><i class="fa-solid d-inline fa-moon icon-light"></i> Light Mode</p>'
+    }
+    root.setAttribute('color-scheme', `${theme}`)
+}
+
+themeBtn.addEventListener('click', () => {
+    let theme = getCurrentTheme();
+    if(theme ==='dark'){
+        theme = 'light'
+    } else {
+        theme = 'dark'
+    }
+    loadTheme(theme);
+    localStorage.setItem('countries.theme', `${theme}`)
+})
 
 // function declaration to render all countrues on home page
 const renderCountries = async () => {
@@ -29,7 +57,7 @@ const renderCountries = async () => {
         template += `
             <div class="col-12 col-md-4 col-lg-3 mb-3 rounded">
                 <a href="html/details.html?name=${country.name.common}">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm bg-white">
                         <img src=${country.flags.png} style="height: 25vh;" alt="" class="rounded-top img-fluid">
                         <div class="p-3 font-14 text-darkblue">
                             <p class="fw-bold font-16 mb-2">${country.name.common}</p>
@@ -58,7 +86,7 @@ const renderCountries = async () => {
             template2 += `
             <div class="col-12 col-md-4 col-lg-3 mb-3 rounded">
                 <a href="html/details.html?name=${country.name.common}">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm bg-white">
                         <img src=${country.flags.png} style="height: 25vh;" alt="" class="rounded-top img-fluid">
                         <div class="p-3 font-14 text-darkblue">
                             <p class="fw-bold font-16 mb-2">${country.name.common}</p>
@@ -99,7 +127,7 @@ const renderCountries = async () => {
         template3 += `
             <div class="col-12 col-md-4 col-lg-3 mb-3 rounded">
                 <a href="html/details.html?name=${country.name.common}">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm bg-white">
                         <img src=${country.flags.png} style="height: 25vh;" alt="" class="rounded-top img-fluid">
                         <div class="p-3 font-14 text-darkblue">
                             <p class="fw-bold font-16 mb-2">${country.name.common}</p>
@@ -126,9 +154,11 @@ const renderCountries = async () => {
 }
 
 // function expression to render all countrues on home page
-renderCountries()
 
-
+window.addEventListener('DOMContentLoaded', () => {
+    loadTheme(getCurrentTheme());
+    renderCountries()
+})
 
 
 

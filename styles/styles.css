@@ -5,12 +5,69 @@ body{
     font-family: 'Nunito Sans', sans-serif;
 }
 
+:root{
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+
+    --text-light: hsl(200, 15%, 8%);
+    --bg-light: hsl(0, 0%, 98%);
+    --el-light: hsl(0, 0%, 100%);
+
+    --text-dark: hsl(0, 0%, 100%);
+    --bg-dark: hsl(207, 26%, 17%);
+    --el-dark: hsl(209, 23%, 22%);
+}
+
+@media(prefers-color-scheme: dark){
+    :root{
+        --text1: var(--text-dark);
+        --bg1: var(--bg-dark);
+        --el1: var(--el-dark);
+    }
+}
+
+@media(prefers-color-scheme: light){
+    :root{
+        --text1: var(--text-light);
+        --bg1: var(--bg-light);
+        --el1: var(--el-light);
+    }
+}
+
+[color-scheme="dark"] {
+    --text1: var(--text-dark);
+    --bg1: var(--bg-dark);
+    --el1: var(--el-dark);
+} 
+
+[color-scheme="light"] {
+    --text1: var(--text-light);
+    --bg1: var(--bg-light);
+    --el1: var(--el-light);
+}
+
+.text-darkblue{
+    color: var(--text1 )
+}
+
+.text-white{
+    color: var(--text2);
+}
+
 .bg-darkblue{
-    background-color: hsl(209, 23%, 22%);
+    background-color: var(--bg2)
 }
 
 .bg-gray{
-    background-color: hsl(0, 0%, 98%);
+    background-color: var(--bg1);
+}
+
+.bg-white{
+    background-color: var(--el1) !important;
+}
+
+.bg-blue{
+    background-color: var(--el2);
 }
   
 .font-300{
@@ -37,13 +94,9 @@ body{
     font-size: 16px;
 }
 
-.text-darkblue{
-    color: hsl(200, 15%, 8%);
-}
-
 .search-input{
     outline: none;
-    border: 2px solid #fff;
+    border: 2px solid var(--el1);
 }
 
 .search-input::placeholder{
@@ -52,7 +105,7 @@ body{
 
 .focus-input{
     outline: none;
-    border: 2px solid #fff;
+    border: 2px solid var(--el1);
 }
 
 .focus-input::placeholder{
@@ -60,11 +113,27 @@ body{
 }
 
 .icon{
-    color: hsl(200, 15%, 8%);;
+    color: var(--text1);
+}
+
+.icon-dark{
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--text1);
+}
+
+.icon-light{
+    color: white;
+}
+
+.icon-dark:hover{
+    color: var(--text1);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--text1);
 }
 
 .card{
-    border: 2px solid #fff;
+    border: 2px solid var(--el1);
     outline: none;
 }
 
@@ -73,11 +142,13 @@ a{
 }
 
 button{
-    border: 2px solid #fff;
+    border: 2px solid var(--el1);
     outline: none;
 }
 
-
+.pointer{
+    cursor: pointer;
+}
 
 
 
